@@ -5,10 +5,9 @@ export const Container = styled.a`
 
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
 
   > svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    font-size: 2.5rem;
   }
 `;
