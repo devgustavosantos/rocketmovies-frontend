@@ -1,6 +1,7 @@
 import { Container, Content, Form, BackgroundImg } from "./styles";
 
 import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 
 import { FiMail, FiLock } from "react-icons/fi";
 
@@ -13,6 +14,8 @@ export function SignIn() {
           <p>Aplicação para acompanhar tudo que assistir.</p>
           <h2>Faça seu login</h2>
           <Input icon={FiMail} placeholder="E-mail" />
+          <Input icon={FiLock} placeholder="Senha" />
+          <Button title="Entrar" />
         </Form>
       </Content>
       <BackgroundImg />
