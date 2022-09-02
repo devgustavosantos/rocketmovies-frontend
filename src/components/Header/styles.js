@@ -3,23 +3,23 @@ import styled from "styled-components";
 export const Container = styled.header`
   width: 100%;
   height: 11.6rem;
-
-  padding: 0 12.3rem;
-
-  display: flex;
-  align-items: center;
-  gap: 6.4rem;
-
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_900};
 
-  > h2 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: ${({ theme }) => theme.COLORS.PINK_800};
-  }
+  > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6.4rem;
 
-  > div:nth-child(2) {
-    margin-bottom: 0;
+    > h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: ${({ theme }) => theme.COLORS.PINK_800};
+    }
+
+    > div:nth-child(2) {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -45,7 +45,7 @@ export const Profile = styled.div`
     }
   }
 
-  > img {
+  img {
     width: 6.4rem;
     height: 6.4rem;
 
