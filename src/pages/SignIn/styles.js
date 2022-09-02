@@ -23,11 +23,12 @@ export const Form = styled.form`
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 
   > h1 {
     font-size: 4.8rem;
     font-weight: 700;
+
     color: ${({ theme }) => theme.COLORS.PINK_800};
   }
 
@@ -39,6 +40,7 @@ export const Form = styled.form`
   > h2 {
     font-size: 2.4rem;
     font-weight: 500;
+    text-align: center;
     color: ${({ theme }) => theme.COLORS.WHITE_800};
 
     margin: 4.8rem 0;
@@ -46,6 +48,7 @@ export const Form = styled.form`
 
   > a:last-child {
     margin-top: 4rem;
+    align-self: center;
   }
 `;
 
