@@ -2,6 +2,7 @@ import { Container, Content, Form, BackgroundImg } from "./styles";
 
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import { ButtonText } from "../../components/ButtonText";
 
 import { FiMail, FiLock } from "react-icons/fi";
 
@@ -16,6 +17,7 @@ export function SignIn() {
           <Input icon={FiMail} placeholder="E-mail" />
           <Input icon={FiLock} placeholder="Senha" />
           <Button title="Entrar" />
+          <ButtonText title="Criar conta" />
         </Form>
       </Content>
       <BackgroundImg />
