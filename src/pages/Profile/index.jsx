@@ -32,24 +32,3 @@ export function Profile() {
     </Container>
   );
 }
-
-{
-  /* <Header>
-<ButtonText />
-</Header>
-<Form>
-<Avatar>
-  <img src="" alt="" />
-  <label>
-    <Icon />
-    <input type="file" />
-  </label>
-</Avatar>
-<Input />
-<Input />
-<Input />
-<Input />
-<Button />
-</Form>
-</Container> */
-}
