@@ -6,10 +6,15 @@ export const Container = styled.button`
   background-color: ${({ theme }) => theme.COLORS.PINK_800};
 
   padding: 1.5rem 0;
-  margin-top: 2.4rem;
+  margin-top: 2rem;
 
   border-radius: 1rem;
 
   font-weight: 500;
   color: ${({ theme }) => theme.COLORS.BLACK_800};
+
+  &:disabled {
+    filter: brightness(0.5);
+    cursor: not-allowed;
+  }
 `;
