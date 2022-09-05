@@ -62,7 +62,6 @@ export const Notes = styled.div`
   height: 100%;
 
   margin-top: 3.8rem;
-  background-color: green;
 
   overflow-y: auto;
 

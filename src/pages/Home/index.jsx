@@ -32,6 +32,32 @@ export function Home() {
                 ],
               }}
             />
+            <Note
+              data={{
+                title: "Nota React",
+                rating: 4,
+                description:
+                  " Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh ",
+                tags: [
+                  { name: "react", id: 1 },
+                  { name: "javascript", id: 2 },
+                  { name: "programação", id: 3 },
+                ],
+              }}
+            />
+            <Note
+              data={{
+                title: "Nota React",
+                rating: 4,
+                description:
+                  "Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh",
+                tags: [
+                  { name: "react", id: 1 },
+                  { name: "javascript", id: 2 },
+                  { name: "programação", id: 3 },
+                ],
+              }}
+            />
           </Notes>
         </Wrapper>
       </main>
