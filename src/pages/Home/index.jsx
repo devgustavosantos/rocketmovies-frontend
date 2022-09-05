@@ -64,24 +64,3 @@ export function Home() {
     </Container>
   );
 }
-
-{
-  /* <Content>
-  <Rating />
-  <Note>
-    <h3>Titulo da nota</h3>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non
-      nesciunt architecto laborum, quasi officiis consequatur facilis!
-      Quisquam explicabo non rem repellat debitis incidunt, illum
-      veniam libero amet enim iste a?
-    </p>
-  </Note>
-  
-  <Tags>
-    <Tag></Tag>
-  </Tags>
-</Content>
-</main>
-</Container> */
-}

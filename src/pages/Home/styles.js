@@ -13,9 +13,9 @@ export const Container = styled.div`
   > main {
     grid-area: content;
     width: 100%;
-    overflow-y: auto;
 
     > .wrapper {
+      overflow-y: auto;
       height: 100%;
 
       padding-top: 5rem;
@@ -66,17 +66,6 @@ export const Notes = styled.div`
   overflow-y: auto;
 
   padding-right: 0.8rem;
-
-  /* > div {
-    margin-bottom: 15px;
-    width: 100%;
-    height: 300px;
-    background-color: red;
-  }
-
-  > div:last-child {
-    margin-bottom: 0;
-  } */
 
   &::-webkit-scrollbar {
     width: 0.8rem;
