@@ -19,6 +19,7 @@ export const Container = styled.div`
     > .wrapper {
       height: 100%;
       overflow-y: auto;
+      padding: 0 2rem;
     }
 
     > .wrapper::-webkit-scrollbar {
