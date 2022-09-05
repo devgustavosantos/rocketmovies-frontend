@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
+  grid-area: header;
+
   width: 100%;
   height: 11.6rem;
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_900};
 
-  > div {
+  > .wrapper {
     height: 100%;
     display: flex;
     align-items: center;
