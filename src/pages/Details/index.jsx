@@ -77,7 +77,11 @@ export function Details() {
             ibus id, nobis cumque quia vitae. Lorem ipsum dolor, sit amet
             consectetur adipisicing elit. Expedita, voluptates! Vero accusantium
             ipsum eum nemo, dicta reiciendis magni rem doloribus alias porro,
-            earum tempore temporibus id, nobis cumque quia vitae.
+            earum tempore temporibus id, nobis cumque quia vitae. Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Dolores dolorem
+            incidunt est ex, libero repellendus reprehenderit labore a dicta
+            nulla excepturi accusamus consectetur? Recusandae, labore natus
+            deserunt totam fugiat quibusdam.
           </p>
         </Wrapper>
       </main>

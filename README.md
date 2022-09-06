@@ -20,7 +20,7 @@ Esse projeto é a parte visual de uma aplicação para guardar, mostrar, editar 
 ## :clapper: Pré-Visualização
 
 <h1 align="center">
-    <img src="./src/assets/placeholder.jpg" alt="gif da versão desktop">
+    <img src="./src/assets/preview.gif" alt="gif da versão desktop">
 </h1>
 
 </br>
@@ -29,9 +29,11 @@ Esse projeto é a parte visual de uma aplicação para guardar, mostrar, editar 
 
 - O projeto **está em andamento**, por isso é normal que bugs apareçam.
 
-- Por enquanto essa aplicação só terá a parte visual, ou seja, não terá conexão com o Backend.
+- Por enquanto essa aplicação só terá a parte visual, ou seja, não terá conexão com o Backend, autenticação, etc.
 
-- Para testar a aplicação, é necessário ter o NodeJS instalado na máquina.;
+- Momentaneamente essa aplicação não terá responsividade.
+
+- Para testar a aplicação, é necessário ter o NodeJS instalado na máquina;
 
 - Você pode baixar o NodeJS [clicando aqui](https://nodejs.org/pt-br/download/).
 
@@ -58,19 +60,66 @@ Este é um dos projetos propostos no programa [Explorer da Rocketseat](https://w
 
 _OBS_: por enquanto a aplicação terá apenas navegação(apenas as interfaces), e não terá interatividade.
 
-- [ ] Login;
-- [ ] Criar conta;
-- [ ] Filmes Salvos;
-- [ ] Salvar novo Filme;
-- [ ] Detalhes do Filme;
-- [ ] Perfil;
+- [x] Login;
+- [x] Criar conta;
+- [x] Filmes Salvos;
+- [x] Salvar um novo Filme;
+- [x] Detalhes do Filme;
+- [x] Perfil;
 
 </br>
 
 ## :bulb: Utilização
 
+- Comece clonando o projeto:
+
+```bash
+  $ git clone https://github.com/devgustavosantos/rocketmovies-frontend.git
 ```
-  Em breve
+
+- Entre no diretório:
+
+```bash
+  $ cd rocketmovies-frontend/
+```
+
+- Instale as dependências:
+
+```bash
+  $ npm install
+```
+
+- Inicie um servidor local:
+
+```bash
+  $ npm run dev
+```
+
+- Se tudo der certo, você receberá uma mensagem parecida com essa:
+
+```bash
+  VITE v3.0.9  ready in 1989 ms
+
+  ➜  Local:   http://127.0.0.1:5173/
+  ➜  Network: use --host to expose
+```
+
+- Agora abra seu navegador no endereço que foi informado no `Local` para testar a aplicação.
+
+- Como por enquanto não há autenticação, para testar as páginas que serão exibidas quando o usuário não estiver logado, vá até "src > routes > index.jsx", e aonde estiver:
+
+```jsx
+<BrowserRouter>
+  <AppRoutes />
+</BrowserRouter>
+```
+
+- Troque para:
+
+```jsx
+<BrowserRouter>
+  <AuthRoutes />
+</BrowserRouter>
 ```
 
 ---
