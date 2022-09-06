@@ -15,7 +15,7 @@ export function New() {
       <Header />
       <main>
         <Wrapper>
-          <ButtonText icon={FiArrowLeft} title="Voltar" />
+          <ButtonText to="/" icon={FiArrowLeft} title="Voltar" />
           <h1>Novo filme</h1>
           <Inputs>
             <Input placeholder="Título" />

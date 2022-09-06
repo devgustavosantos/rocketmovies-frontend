@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.a`
+import { Link } from "react-router-dom";
+
+export const Container = styled(Link)`
   color: ${({ theme }) => theme.COLORS.PINK_800};
 
   display: inline-flex;

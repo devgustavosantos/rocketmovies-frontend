@@ -15,7 +15,7 @@ export function Details() {
       <main>
         <Wrapper>
           <Top>
-            <ButtonText icon={FiArrowLeft} title="Voltar" />
+            <ButtonText to="/" icon={FiArrowLeft} title="Voltar" />
             <div className="highlight">
               <h1>Título da nota</h1>
               <Rating grade={4} isBigSize />

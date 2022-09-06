@@ -14,7 +14,7 @@ export function Home() {
         <Wrapper>
           <Top>
             <h1>Meus filmes</h1>
-            <ButtonAdd>
+            <ButtonAdd to="/new">
               <FiPlus /> Adicionar filme
             </ButtonAdd>
           </Top>

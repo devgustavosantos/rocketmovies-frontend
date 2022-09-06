@@ -13,7 +13,7 @@ export const Container = styled.header`
     align-items: center;
     gap: 6.4rem;
 
-    > h2 {
+    h2 {
       font-size: 2.4rem;
       font-weight: 700;
       color: ${({ theme }) => theme.COLORS.PINK_800};
