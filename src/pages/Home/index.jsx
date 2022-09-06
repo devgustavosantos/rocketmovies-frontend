@@ -21,7 +21,7 @@ export function Home() {
           <Notes>
             <Note
               data={{
-                title: "Nota React",
+                title: "Filme",
                 rating: 4,
                 description:
                   "Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh",
@@ -34,7 +34,7 @@ export function Home() {
             />
             <Note
               data={{
-                title: "Nota React",
+                title: "Filme",
                 rating: 4,
                 description:
                   " Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh ",
@@ -47,7 +47,7 @@ export function Home() {
             />
             <Note
               data={{
-                title: "Nota React",
+                title: "Filme",
                 rating: 4,
                 description:
                   "Lorem gfni dsgiuf  fsdgdf  fdgdf gdfg dfg dfg dfg dfg dfg dfgdfg fdhg f hg fgh gfh g dshgu ihsdiu hgfisdh",

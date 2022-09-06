@@ -16,6 +16,8 @@ export const Container = styled.div`
     grid-area: content;
     width: 100%;
 
+    overflow: hidden;
+
     > .wrapper {
       overflow-y: auto;
       height: 100%;

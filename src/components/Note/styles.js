@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.button`
   width: 100%;
   height: 22.3rem;
 
@@ -13,7 +13,10 @@ export const Container = styled.div`
 
   display: grid;
 
+  text-align: left;
+
   > h3 {
+    width: 100%;
     font-weight: 700;
     font-size: 2.4rem;
     line-height: 3.2rem;
