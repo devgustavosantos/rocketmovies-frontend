@@ -30,12 +30,6 @@ export function New() {
           <h2>Marcadores</h2>
           <section className="note-items">
             <NoteItem value="React" />
-            <NoteItem value="React" />
-            <NoteItem value="React" />
-            <NoteItem value="React" />
-            <NoteItem value="React" />
-            <NoteItem value="React" />
-            <NoteItem value="React" />
             <NoteItem isNew placeholder="Nova tag" />
           </section>
           <Buttons>
