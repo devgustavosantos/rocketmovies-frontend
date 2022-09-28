@@ -1,10 +1,17 @@
-import { Container, Profile, Logout } from "./styles";
-
-import { Input } from "../Input";
-import { Wrapper } from "../Wrapper";
 import { Link } from "react-router-dom";
 
+import { Container, Profile, Logout } from "./styles";
+import { Input } from "../Input";
+import { Wrapper } from "../Wrapper";
+import { useAuth } from "../../hooks/auth";
+
 export function Header() {
+  const { signOut } = useAuth();
+
+  function handleSignOut() {
+    signOut();
+  }
+
   return (
     <Container>
       <Wrapper>
@@ -15,7 +22,9 @@ export function Header() {
         <Profile>
           <div>
             <p>Gustavo Santos</p>
-            <Logout>Sair</Logout>
+            <Logout type="button" onClick={handleSignOut}>
+              Sair
+            </Logout>
           </div>
           <Link to="/profile">
             <img
