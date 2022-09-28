@@ -5,9 +5,15 @@ export function Button({
   title,
   highlighted = true,
   disabled = false,
+  onClick,
 }) {
   return (
-    <Container type="button" disabled={disabled} highlighted={highlighted}>
+    <Container
+      type="button"
+      disabled={disabled}
+      highlighted={highlighted}
+      onClick={onClick}
+    >
       {Icon && <Icon />}
       {title}
     </Container>
