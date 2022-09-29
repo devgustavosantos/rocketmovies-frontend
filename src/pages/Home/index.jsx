@@ -1,5 +1,6 @@
 import { FiPlus } from "react-icons/fi";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Container, Top, ButtonAdd, Notes } from "./styles";
 import { Header } from "../../components/Header";
@@ -12,8 +13,10 @@ export function Home() {
   const [notes, setNotes] = useState([]);
   const [search, setSearch] = useState("");
 
+  const navigate = useNavigate();
+
   function handleShowDetails(id) {
-    console.log(id);
+    navigate(`/details/${id}`);
   }
 
   useEffect(() => {

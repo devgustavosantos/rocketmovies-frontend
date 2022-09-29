@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 import { Container, Profile, Logout } from "./styles";
-import { Input } from "../Input";
 import { Wrapper } from "../Wrapper";
 import { useAuth } from "../../hooks/auth";
 

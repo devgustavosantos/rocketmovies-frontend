@@ -33,7 +33,7 @@ function AuthProvider({ children }) {
   }
 
   useEffect(() => {
-    const user = localStorage.getItem("@rocketmovies:user");
+    const user = JSON.parse(localStorage.getItem("@rocketmovies:user"));
     const token = localStorage.getItem("@rocketmovies:token");
 
     if (user && token) {

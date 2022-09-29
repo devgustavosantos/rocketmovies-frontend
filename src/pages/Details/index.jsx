@@ -1,14 +1,63 @@
-import { Container, Top, Infos } from "./styles";
+import { FiClock, FiArrowLeft } from "react-icons/fi";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
+import { Container, Top, Infos } from "./styles";
 import { Header } from "../../components/Header";
 import { Wrapper } from "../../components/Wrapper";
 import { ButtonText } from "../../components/ButtonText";
 import { Rating } from "../../components/Rating";
 import { Tag } from "../../components/Tag";
-
-import { FiClock, FiArrowLeft } from "react-icons/fi";
+import { api } from "../../services/api";
+import { useAuth } from "../../hooks/auth";
 
 export function Details() {
+  const [data, setData] = useState({});
+  const [dateFormatted, setDateFormatted] = useState(null);
+
+  const { userInfos } = useAuth();
+
+  const params = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (data.updated_at) {
+      const initialFormat = data.updated_at;
+
+      const [date, hour] = initialFormat.split(" ");
+
+      const [year, month, day] = date.split("-");
+
+      const [hours, minutes] = hour.split(":");
+
+      setDateFormatted({
+        date: `${day}/${month}/${year}`,
+        hour: `${hours - 3}:${minutes}`,
+      });
+    }
+  }, [data]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await api.get(`/notes/${params.id}`);
+        setData(response.data);
+      } catch (error) {
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert(
+            "Não foi possível carregar  os dados deste filme. Tente novamente mais tarde."
+          );
+          navigate(-1);
+          console.log(error);
+        }
+      }
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <Container>
       <Header />
@@ -17,72 +66,34 @@ export function Details() {
           <Top>
             <ButtonText to="/" icon={FiArrowLeft} title="Voltar" />
             <div className="highlight">
-              <h1>Título da nota</h1>
-              <Rating grade={4} isBigSize />
+              <h1>{data.title}</h1>
+              <Rating grade={data.rating} isBigSize />
             </div>
             <Infos>
               <img
                 src="https://github.com/devgustavosantos.png"
                 alt="Foto do Usuário"
               />
-              <p>Por Gustavo Santos</p>
+              <p>Por {userInfos.name}</p>
 
               <FiClock />
-              <p>25/05/2022 ás 08:00</p>
+              {dateFormatted && (
+                <p>
+                  {dateFormatted.date} ás {dateFormatted.hour}
+                </p>
+              )}
             </Infos>
           </Top>
-          <div className="tags">
-            {[
-              { name: "react", id: 1 },
-              { name: "javascript", id: 2 },
-              { name: "programação", id: 3 },
-            ].map(tag => (
-              <Tag name={tag.name} key={tag.id} />
-            ))}
-          </div>
-          <p className="description">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
-            voluptates! Vero accusantium ipsum eum nemo, dicta reiciendis magni
-            rem doloribus alias porro, <br />
-            <br />
-            earum tempore temporibus id, nobis cumque quia vitae. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Expedita, voluptates!
-            Vero accusantium ipsum eum nemo, dicta reiciendis magni rem
-            doloribus alias porro, earum tempore temporibus id, nobis cumque
-            quia vitae. Lorem ipsum dolor, sit amet consectetur adipisicing
-            elit. Expedita, voluptates! Vero accusantium ipsum eum nemo, dicta
-            reiciendis magni rem doloribus alias porro, earum tempore temporibus
-            <br />
-            <br /> id, nobis cumque quia vitae. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Expedita, voluptates! Vero accusantium
-            ipsum eum nemo, dicta reiciendis magni rem doloribus alias porro,
-            earum tempore temporibus id, nobis cumque quia vitae. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Expedita, voluptates!
-            Vero accusantium ipsum eum nemo, dicta reiciendis magni rem
-            doloribus alias porro, earum tempore temporibus id, nobis cumque
-            quia vitae. Lorem ipsum dolor, sit amet consectetur adipisicing eli
-            <br />
-            <br />
-            t. Expedita, voluptates! Vero accusantium ipsum eum nemo, dicta
-            reiciendis magni rem doloribus alias porro, earum tempore temporibus
-            id, nobis cumque quia vitae. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Expedita, voluptates! Vero accusantium ipsum eum
-            nemo, dicta reiciendis magni rem doloribus alias porro, earum
-            tempore temporibus id, nobis cumque quia vitae. Lorem ipsum dolor,
-            sit amet consectetur adipisicing elit. Expedita, voluptates! Vero
-            accusantium ipsum eum nemo, dicta reiciendis magni rem doloribus
-            alias porro, earum tempore tempor
-            <br />
-            <br />
-            ibus id, nobis cumque quia vitae. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Expedita, voluptates! Vero accusantium
-            ipsum eum nemo, dicta reiciendis magni rem doloribus alias porro,
-            earum tempore temporibus id, nobis cumque quia vitae. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Dolores dolorem
-            incidunt est ex, libero repellendus reprehenderit labore a dicta
-            nulla excepturi accusamus consectetur? Recusandae, labore natus
-            deserunt totam fugiat quibusdam.
-          </p>
+          {data.tags && (
+            <div className="tags">
+              {data.tags.map(tag => (
+                <Tag name={tag.name} key={tag.id} />
+              ))}
+            </div>
+          )}
+          {data.description && (
+            <p className="description">{data.description}</p>
+          )}
         </Wrapper>
       </main>
     </Container>
