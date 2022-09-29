@@ -10,12 +10,17 @@ import { Rating } from "../../components/Rating";
 import { Tag } from "../../components/Tag";
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 export function Details() {
   const [data, setData] = useState({});
   const [dateFormatted, setDateFormatted] = useState(null);
 
   const { userInfos } = useAuth();
+
+  const avatar = userInfos.avatar
+    ? `${api.defaults.baseURL}/files/${userInfos.avatar}`
+    : avatarPlaceholder;
 
   const params = useParams();
   const navigate = useNavigate();
@@ -70,10 +75,7 @@ export function Details() {
               <Rating grade={data.rating} isBigSize />
             </div>
             <Infos>
-              <img
-                src="https://github.com/devgustavosantos.png"
-                alt="Foto do Usuário"
-              />
+              <img src={avatar} alt={`Foto de ${userInfos.name}`} />
               <p>Por {userInfos.name}</p>
 
               <FiClock />

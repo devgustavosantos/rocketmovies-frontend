@@ -3,9 +3,15 @@ import { Link } from "react-router-dom";
 import { Container, Profile, Logout } from "./styles";
 import { Wrapper } from "../Wrapper";
 import { useAuth } from "../../hooks/auth";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
+import { api } from "../../services/api";
 
 export function Header({ children }) {
-  const { signOut } = useAuth();
+  const { userInfos, signOut } = useAuth();
+
+  const avatar = userInfos.avatar
+    ? `${api.defaults.baseURL}/files/${userInfos.avatar}`
+    : avatarPlaceholder;
 
   function handleSignOut() {
     signOut();
@@ -20,16 +26,13 @@ export function Header({ children }) {
         {children}
         <Profile>
           <div>
-            <p>Gustavo Santos</p>
+            <p>{userInfos.name}</p>
             <Logout type="button" onClick={handleSignOut}>
               Sair
             </Logout>
           </div>
           <Link to="/profile">
-            <img
-              src="https://github.com/devgustavosantos.png"
-              alt="Foto do Usuário"
-            />
+            <img src={avatar} alt={`Foto de ${userInfos.name}`} />
           </Link>
         </Profile>
       </Wrapper>
