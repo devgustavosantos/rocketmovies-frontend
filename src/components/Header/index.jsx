@@ -5,7 +5,7 @@ import { Input } from "../Input";
 import { Wrapper } from "../Wrapper";
 import { useAuth } from "../../hooks/auth";
 
-export function Header() {
+export function Header({ children }) {
   const { signOut } = useAuth();
 
   function handleSignOut() {
@@ -18,7 +18,7 @@ export function Header() {
         <Link to="/">
           <h2>RocketMovies</h2>
         </Link>
-        <Input className="search" placeholder="Pesquisar pelo título" />
+        {children}
         <Profile>
           <div>
             <p>Gustavo Santos</p>

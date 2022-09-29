@@ -18,7 +18,7 @@ export function Profile() {
             src="https://github.com/devgustavosantos.png"
             alt="Foto do Usuário"
           />
-          <label for="user-photo">
+          <label htmlFor="user-photo">
             <FiCamera />
             <input type="file" id="user-photo" accept="image/png, image/jpeg" />
           </label>

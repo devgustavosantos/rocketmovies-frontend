@@ -3,9 +3,9 @@ import { Container } from "./styles";
 import { Rating } from "../Rating";
 import { Tag } from "../Tag";
 
-export function Note({ data }) {
+export function Note({ data, ...rest }) {
   return (
-    <Container>
+    <Container {...rest}>
       <h3>{data.title}</h3>
       <Rating grade={data.rating} isBigSize={false} />
       <p>{data.description}</p>

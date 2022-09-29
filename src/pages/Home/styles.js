@@ -71,6 +71,10 @@ export const Notes = styled.div`
 
   padding-right: 0.8rem;
 
+  h2 {
+    text-align: center;
+  }
+
   &::-webkit-scrollbar {
     width: 0.8rem;
   }

@@ -1,15 +1,52 @@
-import { Container, Top, ButtonAdd, Notes } from "./styles";
+import { FiPlus } from "react-icons/fi";
+import { useState, useEffect } from "react";
 
+import { Container, Top, ButtonAdd, Notes } from "./styles";
 import { Header } from "../../components/Header";
 import { Wrapper } from "../../components/Wrapper";
 import { Note } from "../../components/Note";
-
-import { FiPlus } from "react-icons/fi";
+import { Input } from "../../components/Input";
+import { api } from "../../services/api";
 
 export function Home() {
+  const [notes, setNotes] = useState([]);
+  const [search, setSearch] = useState("");
+
+  function handleShowDetails(id) {
+    console.log(id);
+  }
+
+  useEffect(() => {
+    async function fetchNotes() {
+      try {
+        const response = await api.get(`/notes?title=${search}`);
+
+        setNotes(response.data);
+      } catch (error) {
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert(
+            "Não foi possível carregar os filmes. Tente recarregar a página."
+          );
+          console.log(error);
+        }
+      }
+    }
+
+    fetchNotes();
+  }, [search]);
+
   return (
     <Container>
-      <Header />
+      <Header>
+        <Input
+          className="search"
+          placeholder="Pesquisar pelo título"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
+      </Header>
       <main>
         <Wrapper>
           <Top>
@@ -19,45 +56,17 @@ export function Home() {
             </ButtonAdd>
           </Top>
           <Notes>
-            <Note
-              data={{
-                title: "Filme",
-                rating: 4,
-                description:
-                  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores dolorem incidunt est ex, libero repellendus reprehenderit labore a dicta nulla excepturi accusamus consectetur? Recusandae, labore natus deserunt totam fugiat quibusdam.",
-                tags: [
-                  { name: "react", id: 1 },
-                  { name: "javascript", id: 2 },
-                  { name: "programação", id: 3 },
-                ],
-              }}
-            />
-            <Note
-              data={{
-                title: "Filme",
-                rating: 4,
-                description:
-                  " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores dolorem incidunt est ex, libero repellendus reprehenderit labore a dicta nulla excepturi accusamus consectetur? Recusandae, labore natus deserunt totam fugiat quibusdam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores dolorem incidunt est ex, libero repellendus reprehenderit labore a dicta nulla excepturi accusamus consectetur? Recusandae, labore natus deserunt totam fugiat quibusdam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores dolorem incidunt est ex, libero repellendus reprehenderit labore a dicta nulla excepturi accusamus consectetur? Recusandae, labore natus deserunt totam fugiat quibusdam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores dolorem incidunt est ex, libero repellendus reprehenderit labore a dicta nulla excepturi accusamus consectetur? Recusandae, labore natus deserunt totam fugiat quibusdam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores dolorem incidunt est ex, libero repellendus reprehenderit labore a dicta nulla excepturi accusamus consectetur? Recusandae, labore natus deserunt totam fugiat quibusdam. ",
-                tags: [
-                  { name: "react", id: 1 },
-                  { name: "javascript", id: 2 },
-                  { name: "programação", id: 3 },
-                ],
-              }}
-            />
-            <Note
-              data={{
-                title: "Filme",
-                rating: 4,
-                description:
-                  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores dolorem incidunt est ex, libero repellendus reprehenderit labore a dicta nulla excepturi accusamus consectetur? Recusandae, labore natus deserunt totam fugiat quibusdam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores dolorem incidunt est ex, libero repellendus reprehenderit labore a dicta nulla excepturi accusamus consectetur? Recusandae, labore natus deserunt totam fugiat quibusdam.",
-                tags: [
-                  { name: "react", id: 1 },
-                  { name: "javascript", id: 2 },
-                  { name: "programação", id: 3 },
-                ],
-              }}
-            />
+            {notes.length == 0 ? (
+              <h2>Nenhuma nota encontrada</h2>
+            ) : (
+              notes.map(note => (
+                <Note
+                  key={String(note.id)}
+                  data={note}
+                  onClick={() => handleShowDetails(note.id)}
+                />
+              ))
+            )}
           </Notes>
         </Wrapper>
       </main>
