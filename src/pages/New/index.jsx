@@ -1,15 +1,88 @@
-import { Container, Inputs, TextArea, Buttons } from "./styles";
+import { FiArrowLeft } from "react-icons/fi";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
+import { Container, Inputs, TextArea, Buttons } from "./styles";
 import { Header } from "../../components/Header";
 import { Wrapper } from "../../components/Wrapper";
 import { ButtonText } from "../../components/ButtonText";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { NoteItem } from "../../components/NoteItem";
-
-import { FiArrowLeft } from "react-icons/fi";
+import { api } from "../../services/api";
 
 export function New() {
+  const [title, setTitle] = useState("");
+  const [rating, setRating] = useState("");
+  const [description, setDescription] = useState("");
+  const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState("");
+
+  const navigate = useNavigate();
+
+  function inputValidator() {
+    if (!title) {
+      alert("É necessário dar um título para cadastrar um filme.");
+      return false;
+    }
+
+    const isRatingValid = rating >= 0 && rating <= 5 && rating !== "";
+
+    if (!isRatingValid) {
+      alert("É necessário dar uma nota entre 0 e 5 para cadastrar um filme.");
+      return false;
+    }
+
+    if (newTag) {
+      alert(
+        "Um marcador foi preenchido, mas não foi adicionado. Adicione-o, ou deixe o campo vazio."
+      );
+      return false;
+    }
+
+    return true;
+  }
+
+  function handleBack() {
+    const userConfirmation = confirm(
+      "Todas as alterações serão perdidas...Tem certeza que deseja excluir? "
+    );
+
+    if (userConfirmation) {
+      navigate("/");
+    }
+  }
+
+  function handleAddNewTag() {
+    const tagAlreadyAdded = tags.includes(newTag);
+
+    if (tagAlreadyAdded) {
+      return alert("Este marcador já foi adicionado!");
+    }
+
+    setTags(prevState => [...prevState, newTag]);
+    setNewTag("");
+  }
+
+  async function handleSave() {
+    const passedValidation = inputValidator();
+
+    if (passedValidation) {
+      try {
+        api.post("/notes", { title, description, rating, tags });
+        alert("Filme cadastrado com sucesso!");
+        navigate(-1);
+      } catch (error) {
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert("Não foi possível cadastrar o filme");
+          console.log(error);
+        }
+      }
+    }
+  }
+
   return (
     <Container>
       <Header />
@@ -18,23 +91,44 @@ export function New() {
           <ButtonText to="/" icon={FiArrowLeft} title="Voltar" />
           <h1>Novo filme</h1>
           <Inputs>
-            <Input placeholder="Título" />
+            <Input
+              placeholder="Título"
+              value={title}
+              onChange={e => setTitle(e.target.value)}
+            />
             <Input
               placeholder="Sua nota (de 0 a 5)"
               type="number"
               min="0"
               max="5"
+              value={rating}
+              onChange={e => setRating(e.target.value)}
             />
           </Inputs>
-          <TextArea placeholder="Observações" />
+          <TextArea
+            placeholder="Observações"
+            onChange={e => setDescription(e.target.value)}
+          />
           <h2>Marcadores</h2>
           <section className="note-items">
-            <NoteItem value="React" />
-            <NoteItem isNew placeholder="Nova tag" />
+            {tags.map((tag, index) => (
+              <NoteItem key={`${tag}-${index}`} value={tag} />
+            ))}
+            <NoteItem
+              isNew
+              placeholder="Nova tag"
+              onClick={handleAddNewTag}
+              value={newTag}
+              onChange={e => setNewTag(e.target.value)}
+            />
           </section>
           <Buttons>
-            <Button title="Excluir filme" highlighted={false} />
-            <Button title="Salvar alterações" />
+            <Button
+              title="Excluir filme"
+              highlighted={false}
+              onClick={handleBack}
+            />
+            <Button title="Salvar alterações" onClick={handleSave} />
           </Buttons>
         </Wrapper>
       </main>
