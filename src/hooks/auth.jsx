@@ -32,9 +32,21 @@ function AuthProvider({ children }) {
     localStorage.removeItem("@rocketmovies:token");
   }
 
-  async function updateUser({ user }) {
-    let newInfos;
+  async function updateUser({ user, avatar }) {
     try {
+      if (avatar) {
+        const fileForm = new FormData();
+        fileForm.append("avatar", avatar);
+
+        const response = await api.patch("/users/avatar", fileForm);
+
+        setUserInfos(response.data);
+
+        localStorage.setItem(
+          "@rocketmovies:user",
+          JSON.stringify(response.data)
+        );
+      }
       const response = await api.put("/users", user);
 
       setUserInfos(response.data);
