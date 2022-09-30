@@ -17,7 +17,7 @@ export const Content = styled.div`
 
 export const Form = styled.form`
   width: 100%;
-  max-width: 38rem;
+  max-width: 41rem;
   padding: 8rem 4rem;
   margin: auto;
 
