@@ -4,31 +4,37 @@ import bgImg from "../../assets/background.jpg";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   align-items: stretch;
 `;
 
 export const Content = styled.div`
-  width: 63.5rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  max-width: 64rem;
 `;
 
 export const Form = styled.form`
-  width: 34rem;
+  width: 100%;
+  max-width: 38rem;
+  padding: 8rem 4rem;
+  margin: auto;
 
   display: flex;
   flex-direction: column;
   align-items: stretch;
 
+  text-align: center;
+
   > h1 {
     font-size: 4.8rem;
     font-weight: 700;
     color: ${({ theme }) => theme.COLORS.PINK_800};
+
+    @media (max-width: 425px) {
+      font-size: 10vw;
+    }
   }
 
   > p {
@@ -39,7 +45,6 @@ export const Form = styled.form`
   > h2 {
     font-size: 2.4rem;
     font-weight: 500;
-    text-align: center;
     color: ${({ theme }) => theme.COLORS.WHITE_800};
 
     margin: 4.8rem 0;
