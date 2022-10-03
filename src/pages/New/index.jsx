@@ -45,7 +45,7 @@ export function New() {
 
   function handleBack() {
     const userConfirmation = confirm(
-      "Todas as alterações serão perdidas...Tem certeza que deseja excluir? "
+      "Todas as mudanças serão perdidas...Tem certeza que deseja descartar as alterações?"
     );
 
     if (userConfirmation) {
@@ -134,7 +134,7 @@ export function New() {
           </section>
           <Buttons>
             <Button
-              title="Excluir filme"
+              title="Descartar alterações"
               highlighted={false}
               onClick={handleBack}
             />

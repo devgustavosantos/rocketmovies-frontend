@@ -11,5 +11,5 @@ export const Container = styled.span`
 
   border-radius: 0.8rem;
 
-  margin-right: 0.8rem;
+  /* margin-right: 0.8rem; */
 `;

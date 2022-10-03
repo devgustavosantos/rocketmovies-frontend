@@ -27,6 +27,11 @@ export const Container = styled.div`
 
       display: flex;
       flex-direction: column;
+
+      @media (max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
     }
   }
 `;
@@ -41,6 +46,11 @@ export const Top = styled.div`
   > h1 {
     font-weight: 400;
     font-size: 3.2rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
   }
 `;
 
@@ -82,5 +92,11 @@ export const Notes = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.COLORS.PINK_800};
     border-radius: 8rem;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 `;

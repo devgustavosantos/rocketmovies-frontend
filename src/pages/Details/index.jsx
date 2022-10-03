@@ -2,12 +2,13 @@ import { FiClock, FiArrowLeft } from "react-icons/fi";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import { Container, Top, Infos } from "./styles";
+import { Container, Top, Infos, Buttons } from "./styles";
 import { Header } from "../../components/Header";
 import { Wrapper } from "../../components/Wrapper";
 import { ButtonText } from "../../components/ButtonText";
 import { Rating } from "../../components/Rating";
 import { Tag } from "../../components/Tag";
+import { Button } from "../../components/Button";
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
@@ -24,6 +25,29 @@ export function Details() {
 
   const params = useParams();
   const navigate = useNavigate();
+
+  function handleEdit() {
+    navigate(`/edit/${params.id}`);
+  }
+
+  async function handleDelete() {
+    const userConfirm = window.confirm("Tem certeza que deseja excluir?");
+
+    if (userConfirm) {
+      try {
+        await api.delete(`/notes/${params.id}`);
+        alert("O filme foi excluído com sucesso!");
+        navigate("/");
+      } catch (error) {
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert("Não foi possível exclui o filme");
+          console.log(error);
+        }
+      }
+    }
+  }
 
   useEffect(() => {
     if (data.updated_at) {
@@ -100,6 +124,14 @@ export function Details() {
           {data.description && (
             <p className="description">{data.description}</p>
           )}
+          <Buttons>
+            <Button
+              title="Excluir filme"
+              highlighted={false}
+              onClick={handleDelete}
+            />
+            <Button title="Editar filme" onClick={handleEdit} />
+          </Buttons>
         </Wrapper>
       </main>
     </Container>

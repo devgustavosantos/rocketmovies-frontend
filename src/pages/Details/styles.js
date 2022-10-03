@@ -33,12 +33,12 @@ export const Container = styled.div`
 
     .tags {
       margin: 4rem 0;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
 
       @media (max-width: 768px) {
-        display: flex;
         justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
       }
     }
 
@@ -113,5 +113,24 @@ export const Infos = styled.div`
 
   svg {
     color: ${({ theme }) => theme.COLORS.PINK_800};
+  }
+`;
+
+export const Buttons = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  gap: 5.6rem;
+
+  > button {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+
+    > button {
+      margin-top: 0;
+    }
   }
 `;
