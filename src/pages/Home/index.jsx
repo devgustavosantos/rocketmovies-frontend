@@ -1,4 +1,4 @@
-import { FiPlus } from "react-icons/fi";
+import { FiPlus, FiSearch } from "react-icons/fi";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -17,6 +17,12 @@ export function Home() {
 
   function handleShowDetails(id) {
     navigate(`/details/${id}`);
+  }
+
+  function handleMobileSearch() {
+    const mobileSearch = window.prompt("Digite sua busca:");
+
+    setSearch(mobileSearch);
   }
 
   useEffect(() => {
@@ -49,6 +55,13 @@ export function Home() {
           value={search}
           onChange={e => setSearch(e.target.value)}
         />
+        <button
+          className="mobile-search"
+          type="button"
+          onClick={handleMobileSearch}
+        >
+          <FiSearch />
+        </button>
       </Header>
       <main>
         <Wrapper>
@@ -60,7 +73,7 @@ export function Home() {
           </Top>
           <Notes>
             {notes.length == 0 ? (
-              <h2>Nenhuma nota encontrada</h2>
+              <h2>Nenhum filme encontrado</h2>
             ) : (
               notes.map(note => (
                 <Note

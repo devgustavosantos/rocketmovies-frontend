@@ -8,6 +8,8 @@ export const Container = styled.header`
   padding: 3rem 0;
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_900};
 
+  position: relative;
+
   @media (max-width: 768px) {
     padding: 1rem 0;
   }
@@ -31,6 +33,18 @@ export const Container = styled.header`
 
     > div:nth-child(2) {
       margin-bottom: 0;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .mobile-search {
+      background-color: transparent;
+      font-size: 2rem;
+      color: ${({ theme }) => theme.COLORS.PINK_800};
+      position: absolute;
+      left: 2rem;
     }
   }
 `;
