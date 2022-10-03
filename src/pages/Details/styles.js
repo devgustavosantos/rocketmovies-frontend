@@ -13,7 +13,7 @@ export const Container = styled.div`
   > main {
     grid-area: content;
     width: 100%;
-    padding: 6rem 0;
+    padding: 3rem 0;
 
     overflow-y: hidden;
     > .wrapper {

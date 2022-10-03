@@ -4,8 +4,13 @@ export const Container = styled.header`
   grid-area: header;
 
   width: 100%;
-  height: 11.6rem;
+  /* height: 11.6rem; */
+  padding: 3rem 0;
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_900};
+
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
 
   > .wrapper {
     height: 100%;

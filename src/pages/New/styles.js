@@ -19,10 +19,23 @@ export const Container = styled.div`
 
     overflow: hidden;
 
+    @media (max-width: 768px) {
+      padding: 3rem 0;
+    }
+
     .wrapper {
       height: 100%;
 
       overflow-y: scroll;
+
+      @media (max-width: 768px) {
+        > a {
+          width: 100%;
+          justify-content: center;
+        }
+
+        text-align: center;
+      }
     }
 
     .wrapper::-webkit-scrollbar {
@@ -48,6 +61,11 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.COLORS.GRAY_700};
 
       margin: 4rem 0 2.4rem;
+
+      @media (max-width: 768px) {
+        margin: 3rem 0 0.5rem;
+        text-align: left;
+      }
     }
 
     .note-items {
@@ -63,6 +81,13 @@ export const Container = styled.div`
       display: flex;
       gap: 4rem;
       flex-wrap: wrap;
+
+      @media (max-width: 768px) {
+        gap: 1rem;
+        > div {
+          width: 100%;
+        }
+      }
     }
   }
 `;
@@ -70,6 +95,11 @@ export const Container = styled.div`
 export const Inputs = styled.div`
   display: flex;
   gap: 5.6rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 
   > div {
     width: 100%;
@@ -91,6 +121,11 @@ export const TextArea = styled.textarea`
   padding: 1.7rem;
 
   resize: none;
+
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+    height: 15rem;
+  }
 `;
 
 export const Buttons = styled.div`
@@ -99,5 +134,14 @@ export const Buttons = styled.div`
 
   > button {
     width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+
+    > button {
+      margin-top: 0;
+    }
   }
 `;
