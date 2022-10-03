@@ -8,10 +8,6 @@ export const Container = styled.div`
 
   display: flex;
   align-items: stretch;
-
-  * {
-    outline: 1px dashed red;
-  }
 `;
 
 export const Content = styled.div`
