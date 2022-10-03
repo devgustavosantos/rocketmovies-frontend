@@ -12,10 +12,23 @@ export const Header = styled.header`
 
   display: flex;
   align-items: center;
+
+  position: relative;
+
+  @media (max-width: 768px) {
+    > a {
+      position: absolute;
+      left: 50%;
+      top: 1.2rem;
+
+      transform: translateX(-70%);
+    }
+  }
 `;
 
 export const Form = styled.form`
-  width: 34rem;
+  max-width: 38rem;
+  padding: 0 4rem 4rem;
 
   margin: auto;
 

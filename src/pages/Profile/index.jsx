@@ -7,6 +7,7 @@ import { ButtonText } from "../../components/ButtonText";
 import { Input } from "../../components/Input";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 export function Profile() {
   const { userInfos, updateUser } = useAuth();
