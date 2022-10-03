@@ -75,15 +75,19 @@ export function Details() {
               <Rating grade={data.rating} isBigSize />
             </div>
             <Infos>
-              <img src={avatar} alt={`Foto de ${userInfos.name}`} />
-              <p>Por {userInfos.name}</p>
+              <div className="user-infos">
+                <img src={avatar} alt={`Foto de ${userInfos.name}`} />
+                <p>Por {userInfos.name}</p>
+              </div>
 
-              <FiClock />
-              {dateFormatted && (
-                <p>
-                  {dateFormatted.date} ás {dateFormatted.hour}
-                </p>
-              )}
+              <div className="note-infos">
+                <FiClock />
+                {dateFormatted && (
+                  <p>
+                    {dateFormatted.date} ás {dateFormatted.hour}
+                  </p>
+                )}
+              </div>
             </Infos>
           </Top>
           {data.tags && (

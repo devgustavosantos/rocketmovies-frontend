@@ -18,6 +18,10 @@ export const Container = styled.header`
       font-size: 2.4rem;
       font-weight: 700;
       color: ${({ theme }) => theme.COLORS.PINK_800};
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     > div:nth-child(2) {

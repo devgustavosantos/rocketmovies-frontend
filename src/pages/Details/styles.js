@@ -33,10 +33,18 @@ export const Container = styled.div`
 
     .tags {
       margin: 4rem 0;
+
+      @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
     }
 
     .description {
       text-align: justify;
+      word-wrap: break-word;
     }
   }
 `;
@@ -46,16 +54,34 @@ export const Top = styled.div`
   flex-direction: column;
   gap: 2.4rem;
 
+  @media (max-width: 768px) {
+    align-items: center;
+
+    > a {
+      font-size: 2rem;
+    }
+  }
+
   > .highlight {
     display: flex;
     align-items: center;
     gap: 1.9rem;
+
+    @media (max-width: 768px) {
+      display: block;
+      text-align: center;
+    }
 
     > h1 {
       word-wrap: normal;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+
+      @media (max-width: 768px) {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+      }
     }
   }
 `;
@@ -65,7 +91,19 @@ export const Infos = styled.div`
   align-items: center;
   gap: 0.8rem;
 
-  > img {
+  .user-infos,
+  .note-infos {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  img {
     width: 1.6rem;
     height: 1.6rem;
 
@@ -73,7 +111,7 @@ export const Infos = styled.div`
     border: 1px solid ${({ theme }) => theme.COLORS.GRAY_900};
   }
 
-  > svg {
+  svg {
     color: ${({ theme }) => theme.COLORS.PINK_800};
   }
 `;
