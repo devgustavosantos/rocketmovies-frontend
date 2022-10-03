@@ -64,6 +64,12 @@ export function New() {
     setNewTag("");
   }
 
+  function handleDeleteTag(deleted) {
+    const tagsFiltered = tags.filter(tag => tag !== deleted);
+
+    setTags(tagsFiltered);
+  }
+
   async function handleSave() {
     const passedValidation = inputValidator();
 
@@ -112,7 +118,11 @@ export function New() {
           <h2>Marcadores</h2>
           <section className="note-items">
             {tags.map((tag, index) => (
-              <NoteItem key={`${tag}-${index}`} value={tag} />
+              <NoteItem
+                key={`${tag}-${index}`}
+                onClick={() => handleDeleteTag(tag)}
+                value={tag}
+              />
             ))}
             <NoteItem
               isNew
