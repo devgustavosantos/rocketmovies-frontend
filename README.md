@@ -27,21 +27,17 @@ Esse projeto é a parte visual de uma aplicação para guardar, mostrar, editar 
 
 ## :loudspeaker: Aviso
 
-- O projeto **está em andamento**, por isso é normal que bugs apareçam.
+- O projeto **está finalizado**, mas poderá ter melhorias no futuro.
 
-- Por enquanto essa aplicação só terá a parte visual, ou seja, não terá conexão com o Backend, autenticação, etc.
+- Você pode testar a aplicação [clicando aqui](https://rocketmovies2022.netlify.app/)
 
-- Momentaneamente essa aplicação não terá responsividade.
-
-- Para testar a aplicação, é necessário ter o NodeJS instalado na máquina;
-
-- Você pode baixar o NodeJS [clicando aqui](https://nodejs.org/pt-br/download/).
+- Você também pode clonar o repositório, e executar a aplicação localmente.
 
 </br>
 
 ## :memo: Sobre
 
-Este é um dos projetos propostos no programa [Explorer da Rocketseat](https://www.rocketseat.com.br/explorer), os [detalhes estão aqui](https://efficient-sloth-d85.notion.site/Front-end-da-aplica-o-30a5132b30534255b238a8aa1b48c963), mas basicamente é uma aplicação é a parte visual de um sistema que (futuramente) vai guardar, mostrar, e apagar informações de um filme (enviadas pelo usuário) em um Banco de Dados.
+Este é um dos projetos propostos no programa [Explorer da Rocketseat](https://www.rocketseat.com.br/explorer), os [detalhes estão aqui](https://efficient-sloth-d85.notion.site/Front-end-da-aplica-o-30a5132b30534255b238a8aa1b48c963), essa aplicação é o frontend de um sistema que faz o cadastro de usuários, e permite que esses usuários cadastrem, visualizem, editem e excluam anotações de filmes em um [backend](https://github.com/devgustavosantos/rocketmovies-backend).
 
 </br>
 
@@ -62,10 +58,12 @@ _OBS_: por enquanto a aplicação terá apenas navegação(apenas as interfaces)
 
 - [x] Login;
 - [x] Criar conta;
-- [x] Filmes Salvos;
+- [x] Mostrar filmes Salvos;
 - [x] Salvar um novo Filme;
-- [x] Detalhes do Filme;
-- [x] Perfil;
+- [x] Detalhar um Filme;
+- [x] Atualizar um Filme;
+- [x] Mostrar Perfil;
+- [x] Atualizar Perfil;
 
 </br>
 
@@ -105,22 +103,6 @@ _OBS_: por enquanto a aplicação terá apenas navegação(apenas as interfaces)
 ```
 
 - Agora abra seu navegador no endereço que foi informado no `Local` para testar a aplicação.
-
-- Como por enquanto não há autenticação, para testar as páginas que serão exibidas quando o usuário não estiver logado, vá até "src > routes > index.jsx", e aonde estiver:
-
-```jsx
-<BrowserRouter>
-  <AppRoutes />
-</BrowserRouter>
-```
-
-- Troque para:
-
-```jsx
-<BrowserRouter>
-  <AuthRoutes />
-</BrowserRouter>
-```
 
 ---
 

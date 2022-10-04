@@ -60,8 +60,10 @@ export function New() {
       return alert("Este marcador já foi adicionado!");
     }
 
-    setTags(prevState => [...prevState, newTag]);
-    setNewTag("");
+    if (newTag !== "") {
+      setTags(prevState => [...prevState, newTag]);
+      setNewTag("");
+    }
   }
 
   function handleDeleteTag(deleted) {
