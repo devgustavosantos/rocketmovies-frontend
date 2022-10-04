@@ -22,7 +22,9 @@ export function Home() {
   function handleMobileSearch() {
     const mobileSearch = window.prompt("Digite sua busca:");
 
-    setSearch(mobileSearch);
+    if (mobileSearch) {
+      setSearch(mobileSearch);
+    }
   }
 
   useEffect(() => {
@@ -50,7 +52,7 @@ export function Home() {
     <Container>
       <Header>
         <Input
-          className="search"
+          className="search only-in-desktop"
           placeholder="Pesquisar pelo título"
           value={search}
           onChange={e => setSearch(e.target.value)}

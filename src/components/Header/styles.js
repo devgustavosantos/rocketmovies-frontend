@@ -31,20 +31,28 @@ export const Container = styled.header`
       }
     }
 
-    > div:nth-child(2) {
-      margin-bottom: 0;
-
+    .only-in-desktop {
       @media (max-width: 768px) {
         display: none;
       }
     }
 
+    > div:nth-child(2) {
+      margin-bottom: 0;
+    }
+
     .mobile-search {
+      display: none;
       background-color: transparent;
       font-size: 2rem;
       color: ${({ theme }) => theme.COLORS.PINK_800};
+
       position: absolute;
       left: 2rem;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
     }
   }
 `;
@@ -55,6 +63,11 @@ export const Profile = styled.div`
   display: flex;
   align-items: center;
   gap: 0.9rem;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    right: 2rem;
+  }
 
   > div {
     flex-grow: 1;
@@ -77,6 +90,11 @@ export const Profile = styled.div`
 
     border-radius: 50%;
     border: 1px solid ${({ theme }) => theme.COLORS.GRAY_900};
+
+    @media (max-width: 768px) {
+      width: 5rem;
+      height: 5rem;
+    }
   }
 `;
 

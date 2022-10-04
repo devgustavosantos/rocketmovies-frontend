@@ -10,6 +10,10 @@ export const Container = styled.div`
     "header"
     "content";
 
+  @media (max-width: 768px) {
+    grid-template-rows: 7rem 1fr;
+  }
+
   > main {
     grid-area: content;
 

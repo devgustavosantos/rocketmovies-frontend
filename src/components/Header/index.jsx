@@ -23,7 +23,7 @@ export function Header({ children }) {
   return (
     <Container>
       <Wrapper>
-        <Link to="/">
+        <Link to="/" className="only-in-desktop">
           <h2>RocketMovies</h2>
         </Link>
         {children}
