@@ -20,7 +20,11 @@ Esse projeto é a parte visual de uma aplicação para guardar, mostrar, editar 
 ## :clapper: Pré-Visualização
 
 <h1 align="center">
-    <img src="./src/assets/preview.gif" alt="gif da versão desktop">
+    <img src="./src/assets/preview-mobile.gif" alt="gif da versão mobile">
+</h1>
+
+<h1 align="center">
+    <img src="./src/assets/preview-desktop.gif" alt="gif da versão desktop">
 </h1>
 
 </br>
@@ -29,7 +33,7 @@ Esse projeto é a parte visual de uma aplicação para guardar, mostrar, editar 
 
 - O projeto **está finalizado**, mas poderá ter melhorias no futuro.
 
-- Você pode testar a aplicação [clicando aqui](https://rocketmovies2022.netlify.app/)
+- Você pode testar a aplicação [clicando aqui!](https://rocketmovies2022.netlify.app/)
 
 - Você também pode clonar o repositório, e executar a aplicação localmente.
 
@@ -37,7 +41,7 @@ Esse projeto é a parte visual de uma aplicação para guardar, mostrar, editar 
 
 ## :memo: Sobre
 
-Este é um dos projetos propostos no programa [Explorer da Rocketseat](https://www.rocketseat.com.br/explorer), os [detalhes estão aqui](https://efficient-sloth-d85.notion.site/Front-end-da-aplica-o-30a5132b30534255b238a8aa1b48c963), essa aplicação é o frontend de um sistema que faz o cadastro de usuários, e permite que esses usuários cadastrem, visualizem, editem e excluam anotações de filmes em um [backend](https://github.com/devgustavosantos/rocketmovies-backend).
+Este é um dos projetos propostos no programa [Explorer da Rocketseat](https://www.rocketseat.com.br/explorer), os [detalhes estão aqui](https://efficient-sloth-d85.notion.site/Front-end-da-aplica-o-30a5132b30534255b238a8aa1b48c963), essa aplicação é o frontend de um sistema que faz o cadastro de usuários, e permite que esses usuários cadastrem, visualizem, editem e excluam anotações de filmes em uma [API RESTful.](https://github.com/devgustavosantos/rocketmovies-backend)
 
 </br>
 
@@ -47,14 +51,13 @@ Este é um dos projetos propostos no programa [Explorer da Rocketseat](https://w
 - **JS** - usado para fazer toda a lógica da aplicação;
 - **Styled Components** - utilizado para fazer a estilização;
 - **Git** - responsável por realizar o versionamento do código.
+- **Axios** - utilizado para fazer as requisições.
 - **Vite** - usado para criar um projeto React;
 - **NPM** - utilizado para realizar a instalação das dependências;
 
 </br>
 
 ## :hammer: Funcionalidades
-
-_OBS_: por enquanto a aplicação terá apenas navegação(apenas as interfaces), e não terá interatividade.
 
 - [x] Login;
 - [x] Criar conta;
@@ -102,7 +105,7 @@ _OBS_: por enquanto a aplicação terá apenas navegação(apenas as interfaces)
   ➜  Network: use --host to expose
 ```
 
-- Agora abra seu navegador no endereço que foi informado no `Local` para testar a aplicação.
+- Agora abra seu navegador no endereço que foi informado no "`Local`" para testar a aplicação.
 
 ---
 
