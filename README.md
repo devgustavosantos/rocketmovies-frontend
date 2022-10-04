@@ -111,7 +111,7 @@ Este é um dos projetos propostos no programa [Explorer da Rocketseat](https://w
 
 _Esses são os recursos disponíveis nessa Aplicação, se algum recurso não funcionar como o esperado, verifique essa documentação e tente novamente._
 
-_Caso precista, por favor,entre em contato com [devgustavosantos@outlook.com](mailto:devgustavosantos@outlook.com)._
+_Caso persista, por favor,entre em contato com [devgustavosantos@outlook.com](mailto:devgustavosantos@outlook.com)._
 
 ## :nerd_face: Autor
 
